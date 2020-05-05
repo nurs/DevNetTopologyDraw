@@ -1,0 +1,34 @@
+title:
+  color: lightgrey
+  heightPercentage: 6
+  logoFill: lightgrey
+  stroke: lightgrey
+  author: Nursultan Nazarbayev
+  company: Asia Intercommunications
+  logoUrl: http://aic.kz/wp-content/uploads/2017/02/aic-logo-256%D1%85256.png
+  text: DevNet Марафон Финал
+  subText: github link
+  type: bar
+defaults: &defaults
+  color: "white"
+  fill: "#555555"
+  iconFamily: "cisco"
+  iconFill: "white"
+  iconStroke: "none"
+  stroke: "none"
+cisco: &cisco
+  color: "#004BAF"
+  fill: "white"
+  iconFamily: "cisco"
+  iconFill: "#004BAF"
+  iconStrokeWidth: .25
+  stroke: "#004BAF"
+  preserveWhite: true
+connection: &connection
+  color: "white"
+  stroke: "white"
+  strokeDashArray: "10,2"  
+diagram:
+  aspectRatio: "1:1"
+  fill: "#3d3935"
+  gridLines: false

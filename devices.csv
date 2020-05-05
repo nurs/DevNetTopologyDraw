@@ -1,0 +1,11 @@
+hostname,ip,username,password,secret,device_type,device_role
+CORE-1.devnet.test,10.48.7.71,admin,cisco,cisco,cisco_ios_telnet,CORE
+CORE-2.devnet.test,10.48.7.72,admin,cisco,cisco,cisco_ios_telnet,CORE
+DISTRIBUTION-1.devnet.test,10.48.7.73,admin,cisco,cisco,cisco_ios_telnet,DISTRIBUTION
+DISTRIBUTION-2.devnet.test,10.48.7.74,admin,cisco,cisco,cisco_ios_telnet,DISTRIBUTION
+ACCESS-SW-1.devnet.test,10.48.7.75,admin,cisco,cisco,cisco_ios_telnet,ACCESS
+ACCESS-SW-2.devnet.test,10.48.7.76,admin,cisco,cisco,cisco_ios_telnet,ACCESS
+ACCESS-SW-3.devnet.test,10.48.7.77,admin,cisco,cisco,cisco_ios_telnet,ACCESS
+ACCESS-SW-4.devnet,10.48.7.78,admin,cisco,cisco,cisco_ios_telnet,SERVER-FARM
+ACCESS-SW-5.devnet.test,10.48.7.79,admin,cisco,cisco,cisco_ios_telnet,ACCESS
+RX,10.48.7.80,admin,cisco,cisco,cisco_ios_telnet,INTERNET

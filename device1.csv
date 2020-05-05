@@ -1,0 +1,2 @@
+hostname,ip,username,password,secret,device_type,device_role
+CORE-XXX,10.48.7.71,admin,cisco,cisco,cisco_ios_telnet,CORE
