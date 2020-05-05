@@ -32,4 +32,4 @@ $ python3.7 generate_topology.py
 Для просмотра топологии откройте файл main.html
 ```
 
-![sample_topology](/sample.png)
+![sample_topology](sample.png)
