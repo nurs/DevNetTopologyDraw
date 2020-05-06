@@ -54,7 +54,7 @@ connections:
   - { <<: *connection, endpoints: ["CORE-2:Gi1/1", "INTERNET-2:Gi0/1"] }
   - { <<: *connection, endpoints: ["CORE-2:Gi0/2", "DISTRIBUTION-2:Gi0/1"] }
   - { <<: *connection, endpoints: ["CORE-2:Gi0/3", "DISTRIBUTION-1:Gi0/1"] }
-  - { <<: *connection, endpoints: ["DISTRIBUTION-1:Gi2/0,Gi1/3", "ACCESS-SW-4:Gi0/0,Gi0/1"] }
+  - { <<: *connection, endpoints: ["DISTRIBUTION-1:Gi1/3,Gi2/0", "ACCESS-SW-4:Gi0/0,Gi0/1"] }
   - { <<: *connection, endpoints: ["DISTRIBUTION-1:Gi1/2", "ACCESS-SW-3:Gi0/0"] }
   - { <<: *connection, endpoints: ["DISTRIBUTION-1:Gi1/1", "ACCESS-SW-2:Gi0/0"] }
   - { <<: *connection, endpoints: ["DISTRIBUTION-1:Gi1/0", "ACCESS-SW-1:Gi0/0"] }
