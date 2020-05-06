@@ -5,7 +5,7 @@ import pprint
 import webbrowser
 
 #Module 'Global' variables
-DEVICE_FILE_PATH = 'device-01.csv' # file should contain a list of devices in format: ip,username,password,device_type
+DEVICE_FILE_PATH = 'devices.csv' # file should contain a list of devices in format: ip,username,password,device_type
 DEVICE_ROLES = {'INTERNET':6,'WAN':10,'SERVER-FARM':0,'CORE':4,'DISTRIBUTION':2,'CORE-DISTRIBUTION':3,'ACCESS':0,'UNKNOWN':5}
 DEVICE_ICONS = {'CORE':'layer3switch','DISTRIBUTION':'layer3switch','ACCESS':'workgroupswitch',
                 'CORE-DISTRIBUTION':'virtuallayerswitch','SERVER-FARM':'serverswitch',
