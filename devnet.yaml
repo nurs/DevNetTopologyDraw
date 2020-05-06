@@ -7,7 +7,7 @@ title:
   company: Asia Intercommunications
   logoUrl: http://aic.kz/wp-content/uploads/2017/02/aic-logo-256%D1%85256.png
   text: DevNet Марафон Финал
-  subText: github link
+  subText: More information can be found at https://github.com/nurs/DevNetTopologyDraw
   type: bar
 defaults: &defaults
   color: "white"
@@ -32,34 +32,58 @@ diagram:
   aspectRatio: "1:1"
   fill: "#3d3935"
   gridLines: false
-  columns: 6
+  columns: 12
   rows: 7
 icons:
-  CORE-1: {<<: *cisco, x: 2, y: 4, icon: "layer3switch", url: "ssh://10.48.7.71"}
-  CORE-2: {<<: *cisco, x: 4, y: 4, icon: "layer3switch", url: "ssh://10.48.7.72"}
-  DISTRIBUTION-1: {<<: *cisco, x: 2, y: 2, icon: "layer3switch", url: "ssh://10.48.7.73"}
-  DISTRIBUTION-2: {<<: *cisco, x: 4, y: 2, icon: "layer3switch", url: "ssh://10.48.7.74"}
-  ACCESS-SW-1: {<<: *cisco, x: 1, y: 0, icon: "workgroupswitch", url: "ssh://10.48.7.75"}
-  ACCESS-SW-2: {<<: *cisco, x: 2, y: 0, icon: "workgroupswitch", url: "ssh://10.48.7.76"}
-  ACCESS-SW-3: {<<: *cisco, x: 3, y: 0, icon: "workgroupswitch", url: "ssh://10.48.7.77"}
-  ACCESS-SW-4: {<<: *cisco, x: 0, y: 3, icon: "serverswitch", url: "ssh://10.48.7.78"}
-  ACCESS-SW-5: {<<: *cisco, x: 4, y: 0, icon: "workgroupswitch", url: "ssh://10.48.7.79"}
-  R1: {<<: *cisco, x: 2, y: 6, icon: "router", url: "ssh://10.48.7.80"}
-  R2: {<<: *cisco, x: 1, y: 5, icon: "router", iconFill: "grey", url: "ssh://10.48.7.81"}
+  CORE-1: {<<: *cisco, x: 5, y: 4, icon: "layer3switch", url: "ssh://10.48.7.71"}
+  CORE-2: {<<: *cisco, x: 7, y: 4, icon: "layer3switch", url: "ssh://10.48.7.72"}
+  DISTRIBUTION-1: {<<: *cisco, x: 5, y: 2, icon: "layer3switch", url: "ssh://10.48.7.73"}
+  DISTRIBUTION-2: {<<: *cisco, x: 7, y: 2, icon: "layer3switch", url: "ssh://10.48.7.74"}
+  ACCESS-SW-1: {<<: *cisco, x: 3, y: 0, icon: "workgroupswitch", url: "ssh://10.48.7.75"}
+  ACCESS-SW-2: {<<: *cisco, x: 4, y: 0, icon: "workgroupswitch", url: "ssh://10.48.7.76"}
+  ACCESS-SW-3: {<<: *cisco, x: 5, y: 0, icon: "workgroupswitch", url: "ssh://10.48.7.77"}
+  ACCESS-SW-4: {<<: *cisco, x: 6, y: 0, icon: "workgroupswitch", url: "ssh://10.48.7.78"}
+  ACCESS-SW-5: {<<: *cisco, x: 7, y: 0, icon: "workgroupswitch", url: "ssh://10.48.7.79"}
+  INTERNET-2: {<<: *cisco, x: 5, y: 6, icon: "router", url: "ssh://10.48.7.81"}
+  INTERNET-1devnettest: {<<: *cisco, x: 1, y: 5, icon: "router", iconFill: "grey", url: "ssh://10.48.7.80"}
+  DISTRIBUTION-2devnettest: {<<: *cisco, x: 2, y: 5, icon: "router", iconFill: "grey", url: "ssh://10.48.7.74"}
+  CORE-2devnettest: {<<: *cisco, x: 3, y: 5, icon: "router", iconFill: "grey", url: "ssh://10.48.7.72"}
+  DISTRIBUTION-1devnettest: {<<: *cisco, x: 4, y: 5, icon: "router", iconFill: "grey", url: "ssh://10.48.7.73"}
+  CORE-1devnettest: {<<: *cisco, x: 5, y: 5, icon: "router", iconFill: "grey", url: "ssh://10.48.7.71"}
+  ACCESS-SW-4devnettest: {<<: *cisco, x: 6, y: 5, icon: "router", iconFill: "grey", url: "ssh://10.48.7.78"}
+  ACCESS-SW-3crack: {<<: *cisco, x: 7, y: 5, icon: "router", iconFill: "grey", url: "ssh://10.48.7.77"}
+  ACCESS-SW-2devnettest: {<<: *cisco, x: 8, y: 5, icon: "router", iconFill: "grey", url: "ssh://10.48.7.76"}
+  ACCESS-SW-1dot-adasdnet: {<<: *cisco, x: 9, y: 5, icon: "router", iconFill: "grey", url: "ssh://10.48.7.75"}
+  ACCESS-SW-5devnettest: {<<: *cisco, x: 10, y: 5, icon: "router", iconFill: "grey", url: "ssh://10.48.7.79"}
 connections:
-  - { <<: *connection, endpoints: ["CORE-1:Gi1/0", "R1:Gi0/0"] }
-  - { <<: *connection, endpoints: ["CORE-1:Gi0/2", "DISTRIBUTION-2:Gi0/0"] }
-  - { <<: *connection, endpoints: ["CORE-1:Gi0/1,Gi0/0", "CORE-2:Gi0/1,Gi0/0"] }
-  - { <<: *connection, endpoints: ["CORE-1:Gi0/3", "DISTRIBUTION-1:Gi0/0"] }
-  - { <<: *connection, endpoints: ["CORE-2:Gi1/1", "R2:Gi0/1"] }
-  - { <<: *connection, endpoints: ["CORE-2:Gi0/2", "DISTRIBUTION-2:Gi0/1"] }
-  - { <<: *connection, endpoints: ["CORE-2:Gi0/3", "DISTRIBUTION-1:Gi0/1"] }
-  - { <<: *connection, endpoints: ["DISTRIBUTION-1:Gi1/3,Gi2/0", "ACCESS-SW-4:Gi0/1,Gi0/0"] }
-  - { <<: *connection, endpoints: ["DISTRIBUTION-1:Gi1/2", "ACCESS-SW-3:Gi0/0"] }
-  - { <<: *connection, endpoints: ["DISTRIBUTION-1:Gi1/1", "ACCESS-SW-2:Gi0/0"] }
-  - { <<: *connection, endpoints: ["DISTRIBUTION-1:Gi1/0", "ACCESS-SW-1:Gi0/0"] }
-  - { <<: *connection, endpoints: ["DISTRIBUTION-2:Gi1/3", "ACCESS-SW-4:Gi0/2"] }
-  - { <<: *connection, endpoints: ["DISTRIBUTION-2:Gi2/0", "ACCESS-SW-5:Gi0/0"] }
-  - { <<: *connection, endpoints: ["DISTRIBUTION-2:Gi1/1", "ACCESS-SW-2:Gi0/1"] }
-  - { <<: *connection, endpoints: ["DISTRIBUTION-2:Gi1/2", "ACCESS-SW-3:Gi0/1"] }
-  - { <<: *connection, endpoints: ["DISTRIBUTION-2:Gi1/0", "ACCESS-SW-1:Gi0/1"] }
+  - { <<: *connection, endpoints: ["CORE-1:Gi1/0", "INTERNET-1devnettest:Gi0/0"] }
+  - { <<: *connection, endpoints: ["CORE-1:Gi0/2", "DISTRIBUTION-2devnettest:Gi0/0"] }
+  - { <<: *connection, endpoints: ["CORE-1:Gi0/0,Gi0/1", "CORE-2devnettest:Gi0/0,Gi0/1"] }
+  - { <<: *connection, endpoints: ["CORE-1:Gi0/3", "DISTRIBUTION-1devnettest:Gi0/0"] }
+  - { <<: *connection, endpoints: ["CORE-2:Gi1/1", "INTERNET-2:Gi0/1"] }
+  - { <<: *connection, endpoints: ["CORE-2:Gi0/2", "DISTRIBUTION-2devnettest:Gi0/1"] }
+  - { <<: *connection, endpoints: ["CORE-2:Gi0/3", "DISTRIBUTION-1devnettest:Gi0/1"] }
+  - { <<: *connection, endpoints: ["CORE-2:Gi0/0,Gi0/1", "CORE-1devnettest:Gi0/0,Gi0/1"] }
+  - { <<: *connection, endpoints: ["DISTRIBUTION-1:Gi1/3,Gi2/0", "ACCESS-SW-4devnettest:Gi0/0,Gi0/1"] }
+  - { <<: *connection, endpoints: ["DISTRIBUTION-1:Gi1/2", "ACCESS-SW-3crack:Gi0/0"] }
+  - { <<: *connection, endpoints: ["DISTRIBUTION-1:Gi1/1", "ACCESS-SW-2devnettest:Gi0/0"] }
+  - { <<: *connection, endpoints: ["DISTRIBUTION-1:Gi1/0", "ACCESS-SW-1dot-adasdnet:Gi0/0"] }
+  - { <<: *connection, endpoints: ["DISTRIBUTION-1:Gi0/0", "CORE-1devnettest:Gi0/3"] }
+  - { <<: *connection, endpoints: ["DISTRIBUTION-1:Gi0/1", "CORE-2devnettest:Gi0/3"] }
+  - { <<: *connection, endpoints: ["DISTRIBUTION-2:Gi1/3", "ACCESS-SW-4devnettest:Gi0/2"] }
+  - { <<: *connection, endpoints: ["DISTRIBUTION-2:Gi2/0", "ACCESS-SW-5devnettest:Gi0/0"] }
+  - { <<: *connection, endpoints: ["DISTRIBUTION-2:Gi1/1", "ACCESS-SW-2devnettest:Gi0/1"] }
+  - { <<: *connection, endpoints: ["DISTRIBUTION-2:Gi1/2", "ACCESS-SW-3crack:Gi0/1"] }
+  - { <<: *connection, endpoints: ["DISTRIBUTION-2:Gi1/0", "ACCESS-SW-1dot-adasdnet:Gi0/1"] }
+  - { <<: *connection, endpoints: ["DISTRIBUTION-2:Gi0/0", "CORE-1devnettest:Gi0/2"] }
+  - { <<: *connection, endpoints: ["DISTRIBUTION-2:Gi0/1", "CORE-2devnettest:Gi0/2"] }
+  - { <<: *connection, endpoints: ["ACCESS-SW-1:Gi0/1", "DISTRIBUTION-2devnettest:Gi1/0"] }
+  - { <<: *connection, endpoints: ["ACCESS-SW-1:Gi0/0", "DISTRIBUTION-1devnettest:Gi1/0"] }
+  - { <<: *connection, endpoints: ["ACCESS-SW-2:Gi0/1", "DISTRIBUTION-2devnettest:Gi1/1"] }
+  - { <<: *connection, endpoints: ["ACCESS-SW-2:Gi0/0", "DISTRIBUTION-1devnettest:Gi1/1"] }
+  - { <<: *connection, endpoints: ["ACCESS-SW-3:Gi0/1", "DISTRIBUTION-2devnettest:Gi1/2"] }
+  - { <<: *connection, endpoints: ["ACCESS-SW-3:Gi0/0", "DISTRIBUTION-1devnettest:Gi1/2"] }
+  - { <<: *connection, endpoints: ["ACCESS-SW-4:Gi0/2", "DISTRIBUTION-2devnettest:Gi1/3"] }
+  - { <<: *connection, endpoints: ["ACCESS-SW-4:Gi0/0,Gi0/1", "DISTRIBUTION-1devnettest:Gi1/3,Gi2/0"] }
+  - { <<: *connection, endpoints: ["ACCESS-SW-5:Gi0/0", "DISTRIBUTION-2devnettest:Gi2/0"] }
+  - { <<: *connection, endpoints: ["INTERNET-2:Gi0/1", "CORE-2devnettest:Gi1/1"] }

@@ -30,7 +30,7 @@ def create_topology_info(text):
 
     except ConnectionError:
         # if there was an error
-        print('Error! Unable to backup device ' + hostname)
+        print('Error! Unable to save topology!')
         return False
 
 def connect_to_device(device):

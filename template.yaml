@@ -7,7 +7,7 @@ title:
   company: Asia Intercommunications
   logoUrl: http://aic.kz/wp-content/uploads/2017/02/aic-logo-256%D1%85256.png
   text: DevNet Марафон Финал
-  subText: github link
+  subText: More information can be found at https://github.com/nurs/DevNetTopologyDraw
   type: bar
 defaults: &defaults
   color: "white"
