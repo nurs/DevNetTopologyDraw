@@ -2,24 +2,26 @@ from netmiko import ConnectHandler
 import csv
 import textfsm
 import pprint
+import webbrowser
 
 #Module 'Global' variables
-DEVICE_FILE_PATH = 'devices.csv' # file should contain a list of devices in format: ip,username,password,device_type
+DEVICE_FILE_PATH = 'device-01.csv' # file should contain a list of devices in format: ip,username,password,device_type
 DEVICE_ROLES = {'INTERNET':6,'WAN':10,'SERVER-FARM':0,'CORE':4,'DISTRIBUTION':2,'CORE-DISTRIBUTION':3,'ACCESS':0,'UNKNOWN':5}
 DEVICE_ICONS = {'CORE':'layer3switch','DISTRIBUTION':'layer3switch','ACCESS':'workgroupswitch',
                 'CORE-DISTRIBUTION':'virtuallayerswitch','SERVER-FARM':'serverswitch',
                 'INTERNET':'router','WAN':'router','UNKNOWN':'router", iconFill: "grey'}
 
-TEMPLATE_PATH = 'template.yaml'
-TOPOLOGY_PATH = 'devnet.yaml'
+WEB_URL = 'http://localhost:8585/'
+TEMPLATE_FILE = 'template.yaml'
+TOPOLOGY_FILE = 'devnet.yaml'
 
 def create_topology_info(text):
     try:
         temp_text = ''
-        with open(TEMPLATE_PATH,'r') as f1:
+        with open(TEMPLATE_FILE,'r') as f1:
             temp_text = f1.read()
         temp_text += text
-        with open(TOPOLOGY_PATH, 'w') as file:
+        with open(TOPOLOGY_FILE, 'w') as file:
             file.write(temp_text)
         print("Save is complete!")
         print('-*-' * 10)
@@ -253,6 +255,7 @@ def main():
         output += line;
 
     create_topology_info(output)
+    webbrowser.open(WEB_URL)
 
 if __name__ == '__main__':
     main()

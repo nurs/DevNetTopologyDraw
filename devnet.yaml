@@ -32,34 +32,16 @@ diagram:
   aspectRatio: "1:1"
   fill: "#3d3935"
   gridLines: false
-  columns: 7
+  columns: 6
   rows: 7
 icons:
   CORE-1: {<<: *cisco, x: 2, y: 4, icon: "layer3switch", url: "ssh://10.48.7.71"}
-  CORE-2: {<<: *cisco, x: 4, y: 4, icon: "layer3switch", url: "ssh://10.48.7.72"}
-  DISTRIBUTION-1: {<<: *cisco, x: 2, y: 2, icon: "layer3switch", url: "ssh://10.48.7.73"}
-  DISTRIBUTION-2: {<<: *cisco, x: 4, y: 2, icon: "layer3switch", url: "ssh://10.48.7.74"}
-  ACCESS-SW-1: {<<: *cisco, x: 1, y: 0, icon: "workgroupswitch", url: "ssh://10.48.7.75"}
-  ACCESS-SW-2: {<<: *cisco, x: 2, y: 0, icon: "workgroupswitch", url: "ssh://10.48.7.76"}
-  ACCESS-SW-3: {<<: *cisco, x: 3, y: 0, icon: "workgroupswitch", url: "ssh://10.48.7.77"}
-  ACCESS-SW-4: {<<: *cisco, x: 4, y: 0, icon: "workgroupswitch", url: "ssh://10.48.7.78"}
-  ACCESS-SW-5: {<<: *cisco, x: 5, y: 0, icon: "workgroupswitch", url: "ssh://10.48.7.79"}
-  INTERNET-2: {<<: *cisco, x: 3, y: 6, icon: "router", url: "ssh://10.48.7.81"}
   INTERNET-1: {<<: *cisco, x: 1, y: 5, icon: "router", iconFill: "grey", url: "ssh://10.48.7.80"}
+  DISTRIBUTION-2: {<<: *cisco, x: 2, y: 5, icon: "router", iconFill: "grey", url: "ssh://10.48.7.74"}
+  CORE-2: {<<: *cisco, x: 3, y: 5, icon: "router", iconFill: "grey", url: "ssh://10.48.7.72"}
+  DISTRIBUTION-1: {<<: *cisco, x: 4, y: 5, icon: "router", iconFill: "grey", url: "ssh://10.48.7.73"}
 connections:
   - { <<: *connection, endpoints: ["CORE-1:Gi1/0", "INTERNET-1:Gi0/0"] }
   - { <<: *connection, endpoints: ["CORE-1:Gi0/2", "DISTRIBUTION-2:Gi0/0"] }
-  - { <<: *connection, endpoints: ["CORE-1:Gi0/0,Gi0/1", "CORE-2:Gi0/0,Gi0/1"] }
+  - { <<: *connection, endpoints: ["CORE-1:Gi0/1,Gi0/0", "CORE-2:Gi0/1,Gi0/0"] }
   - { <<: *connection, endpoints: ["CORE-1:Gi0/3", "DISTRIBUTION-1:Gi0/0"] }
-  - { <<: *connection, endpoints: ["CORE-2:Gi1/1", "INTERNET-2:Gi0/1"] }
-  - { <<: *connection, endpoints: ["CORE-2:Gi0/2", "DISTRIBUTION-2:Gi0/1"] }
-  - { <<: *connection, endpoints: ["CORE-2:Gi0/3", "DISTRIBUTION-1:Gi0/1"] }
-  - { <<: *connection, endpoints: ["DISTRIBUTION-1:Gi1/3,Gi2/0", "ACCESS-SW-4:Gi0/0,Gi0/1"] }
-  - { <<: *connection, endpoints: ["DISTRIBUTION-1:Gi1/2", "ACCESS-SW-3:Gi0/0"] }
-  - { <<: *connection, endpoints: ["DISTRIBUTION-1:Gi1/1", "ACCESS-SW-2:Gi0/0"] }
-  - { <<: *connection, endpoints: ["DISTRIBUTION-1:Gi1/0", "ACCESS-SW-1:Gi0/0"] }
-  - { <<: *connection, endpoints: ["DISTRIBUTION-2:Gi1/3", "ACCESS-SW-4:Gi0/2"] }
-  - { <<: *connection, endpoints: ["DISTRIBUTION-2:Gi2/0", "ACCESS-SW-5:Gi0/0"] }
-  - { <<: *connection, endpoints: ["DISTRIBUTION-2:Gi1/1", "ACCESS-SW-2:Gi0/1"] }
-  - { <<: *connection, endpoints: ["DISTRIBUTION-2:Gi1/2", "ACCESS-SW-3:Gi0/1"] }
-  - { <<: *connection, endpoints: ["DISTRIBUTION-2:Gi1/0", "ACCESS-SW-1:Gi0/1"] }
