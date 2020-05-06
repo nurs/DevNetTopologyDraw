@@ -9,7 +9,7 @@ DEVICE_ROLES = {'INTERNET':6,'WAN':10,'SERVER-FARM':0,'CORE':4,'DISTRIBUTION':2,
 DEVICE_ICONS = {'CORE':'layer3switch','DISTRIBUTION':'layer3switch','ACCESS':'workgroupswitch',
                 'CORE-DISTRIBUTION':'virtuallayerswitch','SERVER-FARM':'serverswitch',
                 'INTERNET':'router','WAN':'router','UNKNOWN':'router", iconFill: "grey'}
-DIRECTORY = 'C:\\Users\\Nursultan\\PycharmProjects\\DevNetDrawTopology\\venv\\'
+
 TEMPLATE_PATH = 'template.yaml'
 TOPOLOGY_PATH = 'devnet.yaml'
 
@@ -24,7 +24,6 @@ def create_topology_info(text):
         print("Save is complete!")
         print('-*-' * 10)
         print()
-
         # if successfully done
         return True
 
@@ -69,7 +68,6 @@ def get_devices_from_file(device_file):
     # reading a CSV file with ',' as a delimeter
     with open(device_file, 'r') as f:
         reader = csv.DictReader(f, delimiter=',')
-
         # every device represented by single row which is a dictionary object with keys equal to column names.
         for row in reader:
             device_list.append(row)
@@ -98,11 +96,9 @@ def fetch_lldp_neighbors(device):
         output = connection.send_command('show lldp neighbors detail', use_textfsm=True)
 
         #pprint.pprint(output)
+        #print(real_hostname+' -- '+domain_name)
         #print('-*-' * 10)
         #print()
-
-        # if successfully done
-        #return True
 
     except ConnectionError:
         # if there was an error
@@ -145,7 +141,8 @@ def main():
         neighbors,domain_name = fetch_lldp_neighbors(device)
         #print('!!!!!!!!!!!! - ---- '+str(device['hostname']))
         all_neighbors.append(neighbors)
-        domain_names.add(domain_name)
+        if len(domain_name) > 0:
+            domain_names.add(domain_name)
 
     hostnames = set()
     for device in device_list:

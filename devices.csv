@@ -8,4 +8,4 @@ ACCESS-SW-2.devnet.test,10.48.7.76,admin,cisco,cisco,cisco_ios_telnet,ACCESS
 ACCESS-SW-3.devnet.test,10.48.7.77,admin,cisco,cisco,cisco_ios_telnet,ACCESS
 ACCESS-SW-4.devnet,10.48.7.78,admin,cisco,cisco,cisco_ios_telnet,ACCESS
 ACCESS-SW-5.devnet.test,10.48.7.79,admin,cisco,cisco,cisco_ios_telnet,ACCESS
-R2,10.48.7.81,admin,cisco,cisco,cisco_ios_telnet,INTERNET
+INET,10.48.7.81,admin,cisco,cisco,cisco_ios_telnet,INTERNET
